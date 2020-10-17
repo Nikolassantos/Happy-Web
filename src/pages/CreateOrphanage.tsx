@@ -1,22 +1,13 @@
 import React from 'react'
 import { Map, Marker, TileLayer } from 'react-leaflet'
-import L from 'leaflet'
 
 import { FiPlus } from 'react-icons/fi'
 
+import mapIcon from '../utils/mapIcon'
 import mapMarkerImg from '../assets/svg/map-marker.svg'
 
-import '../styles/pages/create-orphanage.css'
 import { mapKey } from '../utils/config'
 import Sidebar from '../components/Sidebar'
-
-const happyMapIcon = L.icon({
-  iconUrl: mapMarkerImg,
-
-  iconSize: [58, 68],
-  iconAnchor: [29, 68],
-  popupAnchor: [0, -60],
-})
 
 export default function CreateOrphanage() {
   return (
@@ -37,7 +28,7 @@ export default function CreateOrphanage() {
 
               <Marker
                 interactive={false}
-                icon={happyMapIcon}
+                icon={mapIcon}
                 position={[-21.4902181, -51.5370124]}
               />
             </Map>
@@ -98,5 +89,3 @@ export default function CreateOrphanage() {
     </div>
   )
 }
-
-// return `https://a.tile.openstreetmap.org/${z}/${x}/${y}.png`;
